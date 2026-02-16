@@ -1,6 +1,6 @@
 .inputbar {
   display: flex;
-  align-items: flex-end;
+  align-items: center;   /* <- cámbialo de flex-end a center */
   gap: 10px;
   padding: 12px;
   border-top: 1px solid #e7e7e7;
@@ -9,16 +9,13 @@
 
 .chat-input {
   flex: 1;
-
-  .mdc-text-field--outlined {
-    border-radius: 16px; // bordes más suaves
-  }
-
-  textarea {
-    resize: none;
-  }
+  margin: 0;            /* <- importante en mat-form-field */
 }
 
 button[mat-icon-button] {
   flex-shrink: 0;
+  height: 56px;         /* <- mismo alto típico del outline */
+  width: 56px;
+  display: grid;
+  place-items: center;
 }

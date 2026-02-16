@@ -1,12 +1,35 @@
 .container {
-  display: grid; grid-template-columns: 1fr 320px; gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
   height: calc(100dvh - 64px); /* resta el toolbar */
+  min-height: 0;               /* CLAVE */
 }
+
 .chat {
-  display: grid; grid-template-rows: 1fr auto; background: #fafbff; border-radius: 12px; border: 1px solid #eceef7;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: #fafbff;
+  border-radius: 12px;
+  border: 1px solid #eceef7;
   overflow: hidden;
+  min-height: 0;               /* CLAVE */
 }
+
+/* Haz que el área de mensajes tenga scroll */
+.chat app-message-list {
+  display: block;
+  min-height: 0;               /* CLAVE */
+  overflow: auto;              /* SCROLL aquí */
+}
+
 .sidebar {
-  border: 1px solid #eceef7; border-radius: 12px; padding: 1rem; background: #fff;
+  border: 1px solid #eceef7;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  min-height: 0;               /* opcional pero recomendado */
+  overflow: auto;              /* por si la sidebar crece */
 }
+
 .spacer { flex: 1 1 auto; }
